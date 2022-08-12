@@ -286,7 +286,7 @@ boundaryStartStatement
 
 boundaryStart
     : ENTERPRISE_BOUNDARY attributes {console.log($1,JSON.stringify($2)); $2.splice(2, 0, 'ENTERPRISE'); yy.addPersonOrSystemBoundary(...$2); $$=$2;}
-    | SYSTEM_BOUNDARY attributes {console.log($1,JSON.stringify($2)); $2.splice(2, 0, 'ENTERPRISE'); yy.addPersonOrSystemBoundary(...$2); $$=$2;}
+    | SYSTEM_BOUNDARY attributes {console.log($1,JSON.stringify($2)); $2.splice(2, 0, 'SYSTEM'); yy.addPersonOrSystemBoundary(...$2); $$=$2;}
     | BOUNDARY attributes {console.log($1,JSON.stringify($2)); yy.addPersonOrSystemBoundary(...$2); $$=$2;}
     | CONTAINER_BOUNDARY attributes {console.log($1,JSON.stringify($2)); $2.splice(2, 0, 'CONTAINER'); yy.addContainerBoundary(...$2); $$=$2;}
     | NODE attributes {console.log($1,JSON.stringify($2)); yy.addDeploymentNode('node', ...$2); $$=$2;}
